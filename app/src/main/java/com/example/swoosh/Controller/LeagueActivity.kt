@@ -1,10 +1,10 @@
-package com.example.swoosh
+package com.example.swoosh.Controller
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.example.swoosh.Utilities.EXTRA_LEAGUE
 import com.example.swoosh.databinding.ActivityLeagueBinding
 
 class LeagueActivity : BaseActivity() {
