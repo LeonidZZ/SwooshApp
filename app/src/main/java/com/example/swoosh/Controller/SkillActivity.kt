@@ -15,6 +15,11 @@ class SkillActivity : BaseActivity() {
 
     private lateinit var binding: ActivitySkillBinding
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState?.putParcelable(EXTRA_PLAYER, player)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySkillBinding.inflate(layoutInflater)
@@ -23,6 +28,14 @@ class SkillActivity : BaseActivity() {
 
         player = intent.getParcelableExtra(EXTRA_PLAYER)!!
     }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        if (savedInstanceState != null) {
+            player = savedInstanceState.getParcelable<Player>(EXTRA_PLAYER)!!
+        }
+    }
+
 
     fun onBallerClick (view: View) {
         binding.beginnerSkillBtn.isChecked = false
