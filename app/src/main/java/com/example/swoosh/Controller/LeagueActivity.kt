@@ -29,7 +29,7 @@ class LeagueActivity : BaseActivity() {
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         if (savedInstanceState != null) {
-            player = savedInstanceState.getParcelable<Player>(EXTRA_PLAYER)!!
+            player = savedInstanceState.getParcelable<Player>(EXTRA_PLAYER)?: Player("", "")
         }
     }
 

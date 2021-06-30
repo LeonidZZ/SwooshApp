@@ -26,13 +26,13 @@ class SkillActivity : BaseActivity() {
         val view = binding.root
         setContentView(view)
 
-        player = intent.getParcelableExtra(EXTRA_PLAYER)!!
+        player = intent.getParcelableExtra<Player>(EXTRA_PLAYER) ?: Player("", "")
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         if (savedInstanceState != null) {
-            player = savedInstanceState.getParcelable<Player>(EXTRA_PLAYER)!!
+            player = savedInstanceState.getParcelable<Player>(EXTRA_PLAYER) ?: Player("", "")
         }
     }
 
